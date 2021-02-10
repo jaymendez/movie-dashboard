@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import MovieTable from './components/MovieTable';
+import { Switch, Route, } from "react-router-dom";
+import MoviesContainer from './components/MoviesContainer';
+import { Container } from '@material-ui/core';
+import Layout from './components/Layout';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	return (
+		<div className="App">
+		<Layout>
+			<Container maxWidth="lg">
+					<Switch>
+						<Route exact path="/movies/top" >
+							<MoviesContainer />
+						</Route>
+						<Route exact path="/movies" >
+							<MovieTable />
+						</Route>
+					</Switch>
+			</Container>
+				</Layout>
+		</div>
+	);
 }
 
 export default App;

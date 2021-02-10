@@ -1,0 +1,8 @@
+.chip-container {
+  display: "flex";
+  justify-content: "center";
+  flex-wrap: "wrap";
+}
+.chip-container .MuiChip-root {
+	margin: 3px;
+}
